@@ -12,6 +12,16 @@ func NewSet[T comparable](items ...T) *Set[T] {
 	return &s
 }
 
+func (s *Set[T]) Items() []T {
+	r := make([]T, len(s.data))
+
+	for k := range s.data {
+		r = append(r, k)
+	}
+
+	return r
+}
+
 func (s *Set[T]) Add(item T) {
 	s.data[item] = struct{}{}
 }
