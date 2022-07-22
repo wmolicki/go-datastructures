@@ -13,7 +13,7 @@ func NewSet[T comparable](items ...T) *Set[T] {
 }
 
 func (s *Set[T]) Items() []T {
-	r := make([]T, len(s.data))
+	r := make([]T, 0, len(s.data))
 
 	for k := range s.data {
 		r = append(r, k)

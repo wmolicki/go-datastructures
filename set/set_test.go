@@ -117,3 +117,10 @@ func TestUnion(t *testing.T) {
 		assert.Equal(t, tc.want, tc.tested.Union(tc.other), fmt.Sprintf("%+v", tc))
 	}
 }
+
+func TestItems(t *testing.T) {
+	s := NewSet(1, 2, 3, 4, 5, 6, 7)
+	items := s.Items()
+	assert.Equal(t, 7, len(items))
+	assert.Equal(t, 7, cap(items))
+}
