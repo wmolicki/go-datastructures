@@ -16,6 +16,12 @@ func TestStack(t *testing.T) {
 	s.Push(5)
 	s.Push(0)
 
+	var numbers []int
+	for _, i := range *s {
+		numbers = append(numbers, i)
+	}
+	assert.Equal(t, []int{1, 3, 5, 0}, numbers)
+
 	item, ok := s.Pop()
 	assert.True(t, ok)
 	assert.Equal(t, 0, item)
